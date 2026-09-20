@@ -1,16 +1,17 @@
+
 import { motion } from 'framer-motion';
 import SectionHeading from './SectionHeading';
 
 const stats = [
-  { value: '4+', label: 'Cloud & DevOps tools in daily use' },
-  { value: '10', label: 'Certifications completed' },
-  { value: '2', label: 'Projects shipped' },
+  { value: 'AI', label: 'Exploring intelligent systems & automation' },
+  { value: 'Cloud', label: 'Building with modern cloud technologies' },
+  { value: '∞', label: 'Learning, experimenting & building' },
 ];
 
 export default function About() {
   return (
     <section id="about" className="max-w-6xl mx-auto px-6 py-28">
-      <SectionHeading kicker="About" title="A little about how I work" />
+      <SectionHeading kicker="About" title="Beyond the interface" />
 
       <div className="grid md:grid-cols-[1.2fr_1fr] gap-14">
         <motion.div
@@ -22,15 +23,22 @@ export default function About() {
           style={{ color: 'var(--text-muted)' }}
         >
           <p>
-            I'm drawn to the layer underneath the app — the pipelines, containers, and cloud
-            infrastructure that decide whether software actually stays up. I like taking a
-            manual, error-prone process and turning it into something automated and boring
-            in the best way.
+            I’m fascinated by the systems people don’t see — the cloud,
+            infrastructure, automation, and intelligence that keep modern
+            applications moving.
           </p>
+
           <p>
-            Most of what I build lives at the intersection of cloud computing and DevOps:
-            provisioning infrastructure, wiring up CI/CD, and writing the scripts that make
-            deployments repeatable instead of stressful.
+            I enjoy building, experimenting, breaking things, and rebuilding
+            them better. Somewhere between <span style={{ color: 'var(--accent)' }}>
+            AI, cloud computing, and DevOps
+            </span>, I’m exploring how complex ideas can become simple,
+            reliable systems.
+          </p>
+
+          <p>
+            For me, every project is another excuse to learn something new,
+            automate something tedious, and turn an idea into something real.
           </p>
         </motion.div>
 
@@ -42,13 +50,24 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.5, delay: 0.15 + i * 0.1 }}
-              className="rounded-xl border p-5"
-              style={{ borderColor: 'var(--border)', background: 'var(--surface)' }}
+              whileHover={{ y: -4 }}
+              className="rounded-xl border p-5 transition-colors"
+              style={{
+                borderColor: 'var(--border)',
+                background: 'var(--surface)',
+              }}
             >
-              <div className="font-display text-3xl mb-1" style={{ color: 'var(--accent)' }}>
+              <div
+                className="font-display text-3xl mb-1"
+                style={{ color: 'var(--accent)' }}
+              >
                 {s.value}
               </div>
-              <div className="text-xs md:text-sm" style={{ color: 'var(--text-muted)' }}>
+
+              <div
+                className="text-xs md:text-sm"
+                style={{ color: 'var(--text-muted)' }}
+              >
                 {s.label}
               </div>
             </motion.div>
@@ -58,3 +77,4 @@ export default function About() {
     </section>
   );
 }
+
